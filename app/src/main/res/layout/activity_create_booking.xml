@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#F8FAFC">
+
+    <!-- Top AppBar / Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarCreateBooking"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#0052CC"
+        app:title="Create Energy Reservation"
+        app:titleTextColor="#FFFFFF"
+        app:navigationIcon="@android:drawable/ic_menu_revert"
+        app:navigationIconTint="#FFFFFF" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strict 7-Day Horizon Rule applies for scheduling"
+                android:textSize="13sp"
+                android:textColor="#475569"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Select Solar Station -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Microgrid Solar Station *"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#0F172A"
+                android:layout_marginBottom="6dp" />
+
+            <Spinner
+                android:id="@+id/spStations"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_spinner_outline"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Select Transfer Type -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transfer Type *"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#0F172A"
+                android:layout_marginBottom="6dp" />
+
+            <RadioGroup
+                android:id="@+id/rgType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_spinner_outline"
+                android:padding="4dp"
+                android:layout_marginBottom="20dp">
+
+                <RadioButton
+                    android:id="@+id/rbSell"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SELL Energy"
+                    android:textColor="#0F172A"
+                    android:textStyle="bold"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/rbBuy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="BUY Energy"
+                    android:textColor="#0F172A"
+                    android:textStyle="bold" />
+            </RadioGroup>
+
+            <!-- Energy Amount in kWh -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Energy Amount (kWh) *"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxStrokeColor="#0052CC"
+                app:hintTextColor="#0052CC"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etKwh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textColor="#0F172A"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Date Picker Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Scheduled Date (Max +7 Days) *"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxStrokeColor="#0052CC"
+                app:hintTextColor="#0052CC"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_calendar"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etScheduledDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:inputType="none"
+                    android:textColor="#0F172A"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Time Picker Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Scheduled Time *"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxStrokeColor="#0052CC"
+                app:hintTextColor="#0052CC"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_clock"
+                android:layout_marginBottom="28dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etScheduledTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:inputType="none"
+                    android:textColor="#0F172A"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmitBooking"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="CONFIRM RESERVATION"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                android:backgroundTint="#0052CC" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
