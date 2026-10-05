@@ -1,0 +1,73 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SmartSolarMicrogrid" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Brand Colors -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/primary_light</item>
+        <item name="colorOnPrimaryContainer">@color/primary_dark</item>
+
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/secondary_light</item>
+        <item name="colorOnSecondaryContainer">@color/secondary_dark</item>
+
+        <item name="android:windowBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+
+        <!-- Material Component Styles -->
+        <item name="textInputStyle">@style/Widget.SmartSolar.TextInputLayout</item>
+        <item name="materialButtonStyle">@style/Widget.SmartSolar.Button</item>
+        <item name="radioButtonStyle">@style/Widget.SmartSolar.RadioButton</item>
+        <item name="bottomNavigationStyle">@style/Widget.SmartSolar.BottomNavigationView</item>
+    </style>
+
+    <style name="Theme.SmartSolarMicrogrid" parent="Base.Theme.SmartSolarMicrogrid" />
+
+    <!-- Custom Outlined TextInputLayout Style -->
+    <style name="Widget.SmartSolar.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="hintTextColor">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_muted</item>
+    </style>
+
+    <!-- Custom Button Style -->
+    <style name="Widget.SmartSolar.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <!-- Custom RadioButton Style -->
+    <style name="Widget.SmartSolar.RadioButton" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="buttonTint">@color/primary</item>
+    </style>
+
+    <!-- Custom BottomNavigationView Style -->
+    <style name="Widget.SmartSolar.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="backgroundTint">@color/white</item>
+        <item name="itemIconTint">@color/nav_item_color</item>
+        <item name="itemTextColor">@color/nav_item_color</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.SmartSolar.BottomNavIndicator</item>
+    </style>
+
+    <style name="Widget.SmartSolar.BottomNavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/primary_light</item>
+    </style>
+
+</resources>
