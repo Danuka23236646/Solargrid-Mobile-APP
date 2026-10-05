@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#F8FAFC">
+
+    <!-- Top AppBar Header -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarOperator"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#0052CC"
+        app:title="Station Operator Portal"
+        app:titleTextColor="#FFFFFF">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOperatorLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:text="Logout"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp"
+            android:backgroundTint="#DC2626" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tvOperatorInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logged in as: Station Operator"
+            android:textSize="14sp"
+            android:textColor="#475569"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Scan Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#0052CC"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Verify Energy Transfer"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scan prosumer's transaction QR code to verify and finalize transfer"
+                    android:textSize="13sp"
+                    android:textColor="#DBEAFE"
+                    android:textAlignment="center"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnScanQrCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:text="📷 SCAN PROSUMER QR CODE"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    android:backgroundTint="#059669" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Microgrid Station Reservations"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="#0F172A"
+            android:layout_marginBottom="12dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOperatorBookings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false" />
+
+    </LinearLayout>
+</LinearLayout>
