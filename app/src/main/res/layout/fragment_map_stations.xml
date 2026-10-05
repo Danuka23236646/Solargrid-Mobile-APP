@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#F8FAFC">
+
+    <!-- Clean Top AppBar Header -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarMap"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#0052CC"
+        app:title="Microgrid Stations Map"
+        app:titleTextColor="#FFFFFF" />
+
+    <!-- Pure Map View Container -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Google Maps -->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/stationMap"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Overlay Station Info Card (Appears only when marker is clicked) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardStationDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp"
+            android:visibility="gone"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="#0052CC">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvMapStationName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Microgrid Station Name"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#0052CC" />
+
+                <TextView
+                    android:id="@+id/tvMapStationAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address location"
+                    android:textSize="14sp"
+                    android:textColor="#475569"
+                    android:layout_marginTop="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:id="@+id/tvMapStationCapacity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Capacity: 150.0 kW"
+                        android:textSize="13sp"
+                        android:textColor="#059669"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvMapStationSlots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Slots: 8 Available"
+                        android:textSize="13sp"
+                        android:textColor="#0052CC"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMapBookNow"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Book This Microgrid Node"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    app:cornerRadius="10dp"
+                    android:backgroundTint="#0052CC" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+</LinearLayout>
