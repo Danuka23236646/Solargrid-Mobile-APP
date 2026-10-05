@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Primary Colors (Solar Blue) -->
+    <color name="primary">#0052CC</color>
+    <color name="primary_dark">#0A369D</color>
+    <color name="primary_light">#E0EDFF</color>
+
+    <!-- Secondary / Accent Colors (Energy Green) -->
+    <color name="secondary">#059669</color>
+    <color name="secondary_dark">#047857</color>
+    <color name="secondary_light">#D1FAE5</color>
+
+    <!-- Neutrals & Backgrounds -->
+    <color name="background">#F8FAFC</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="card_stroke">#E2E8F0</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Status Colors -->
+    <color name="status_confirmed">#2563EB</color>
+    <color name="status_completed">#059669</color>
+    <color name="status_cancelled">#DC2626</color>
+    <color name="status_pending">#D97706</color>
+</resources>

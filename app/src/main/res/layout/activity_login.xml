@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:background="#F8FAFC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp"
+        android:gravity="center_horizontal">
+
+        <!-- Solar Logo -->
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_solar_power"
+            android:contentDescription="Solar Logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smart Solar Microgrid"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#0F172A"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trading &amp; Energy Reservation System"
+            android:textSize="14sp"
+            android:textColor="#475569"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Role Toggle Radio Group -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Portal Role"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#475569"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rgRole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_spinner_outline"
+            android:padding="4dp"
+            android:layout_marginBottom="20dp">
+
+            <RadioButton
+                android:id="@+id/rbProsumer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Prosumer"
+                android:textColor="#0F172A"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:checked="true"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <RadioButton
+                android:id="@+id/rbOperator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Operator"
+                android:textColor="#0F172A"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+        </RadioGroup>
+
+        <!-- NIC / Email Text Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="NIC or Email Address"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxBackgroundColor="#FFFFFF"
+            app:boxStrokeColor="#0052CC"
+            app:hintTextColor="#0052CC"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNicOrEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="#0F172A"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password Text Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxBackgroundColor="#FFFFFF"
+            app:boxStrokeColor="#0052CC"
+            app:hintTextColor="#0052CC"
+            app:passwordToggleEnabled="true"
+            android:layout_marginBottom="28dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="#0F172A"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Login Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="LOGIN TO ACCOUNT"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            android:backgroundTint="#0052CC" />
+
+        <!-- Register Link -->
+        <TextView
+            android:id="@+id/tvRegisterLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account? Register here"
+            android:textSize="15sp"
+            android:textColor="#0052CC"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:padding="8dp" />
+
+    </LinearLayout>
+</ScrollView>
